@@ -28,13 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.convertButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // convertButton
+            // 
+            this.convertButton.Location = new System.Drawing.Point(12, 161);
+            this.convertButton.Name = "convertButton";
+            this.convertButton.Size = new System.Drawing.Size(75, 23);
+            this.convertButton.TabIndex = 0;
+            this.convertButton.Text = "Convert";
+            this.convertButton.UseVisualStyleBackColor = true;
+            this.convertButton.Click += new System.EventHandler(this.convertButton_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.convertButton);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button convertButton;
     }
 }
 
