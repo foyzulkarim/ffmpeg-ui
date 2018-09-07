@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,13 +16,13 @@ namespace FfmpegApp
     {
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void convertButton_Click(object sender, EventArgs e)
         {
-            string output = $"output-{DateTime.Now.Ticks}.mp4";
-            LaunchCommandLineApp("sample.flv", output);
+            string output =textBox2.Text+ $"\\{textBox3.Text}-{DateTime.Now.Ticks}.mp4";
+            LaunchCommandLineApp(textBox1.Text, output);
             Process.Start("explorer.exe", "/select, \"" + output + "\"");
         }
 
@@ -32,10 +33,34 @@ namespace FfmpegApp
             startInfo.UseShellExecute = false;
             startInfo.FileName = "ffmpeg.exe";
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            startInfo.Arguments = $"-i {input} {outputFile}";
-            using (Process exeProcess = Process.Start(startInfo))
+            startInfo.Arguments = $"-i \"{input}\" \"{outputFile}\"";
+            try
             {
-                exeProcess.WaitForExit();
+                using (Process exeProcess = Process.Start(startInfo))
+                {
+                    exeProcess.WaitForExit();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        private void openFileButton_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox1.Text = openFileDialog1.FileName;
+            }
+        }
+
+        private void folderOpenButton_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.SelectedPath = Environment.CurrentDirectory;
+            if (folderBrowserDialog1.ShowDialog()==DialogResult.OK)
+            {
+                textBox2.Text = folderBrowserDialog1.SelectedPath;
             }
         }
     }
