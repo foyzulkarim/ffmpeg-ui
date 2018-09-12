@@ -34,6 +34,7 @@ namespace FfmpegApp
             startInfo.FileName = "ffmpeg.exe";
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;
             startInfo.Arguments = $"-i \"{input}\" \"{outputFile}\"";
+
             try
             {
                 using (Process exeProcess = Process.Start(startInfo))
@@ -62,6 +63,11 @@ namespace FfmpegApp
             {
                 textBox2.Text = folderBrowserDialog1.SelectedPath;
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
