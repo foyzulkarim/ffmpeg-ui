@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FfmpegApp.Models;
+using MediaToolkit;
+using MediaToolkit.Model;
 
 namespace FfmpegApp
 {
@@ -16,14 +19,55 @@ namespace FfmpegApp
     {
         public Form1()
         {
-            InitializeComponent();            
+            InitializeComponent();
+        }
+        
+        private string OutputType { get; set; }
+        private Button lastClickedButton = null;
+
+        private async void convertButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(OutputType))
+            {
+                MessageBox.Show("Please select output format");
+            }
+            else
+            {
+                
+                var inputFilePath = txtInputFile.Text;
+                var fileName = Path.GetFileNameWithoutExtension(inputFilePath);
+                string outputFilePath = txtOutputFolder.Text + $"\\{fileName}-{DateTime.Now.Ticks}." + OutputType;
+
+                var conversionFileDetails = new ConvertFileDetails
+                {
+                    InputFilePath = inputFilePath,
+                    OutputFilePath = outputFilePath
+                };
+
+                Task<string> conversionTask = new Task<string>(() => ConvertFile(conversionFileDetails));
+                conversionTask.Start();
+                DisableActionButtons();
+
+
+                MessageBox.Show("Conversion in progress please wait...");
+                var result = await conversionTask;
+                MessageBox.Show("File conversion completed.");
+                EnableActionButtons();
+
+                //LaunchCommandLineApp(txtInputFile.Text, output);
+
+            }
+            
         }
 
-        private void convertButton_Click(object sender, EventArgs e)
+        private void DisableActionButtons()
         {
-            string output =textBox2.Text+ $"\\{textBox3.Text}-{DateTime.Now.Ticks}.mp4";
-            LaunchCommandLineApp(textBox1.Text, output);
-            Process.Start("explorer.exe", "/select, \"" + output + "\"");
+            convertButton.Enabled = folderOpenButton.Enabled = openFileButton.Enabled = false;
+        }
+
+        private void EnableActionButtons()
+        {
+            convertButton.Enabled = folderOpenButton.Enabled = openFileButton.Enabled = true;
         }
 
         private void LaunchCommandLineApp(string input, string outputFile)
@@ -52,7 +96,7 @@ namespace FfmpegApp
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                textBox1.Text = openFileDialog1.FileName;
+                txtInputFile.Text = openFileDialog1.FileName;
             }
         }
 
@@ -61,7 +105,7 @@ namespace FfmpegApp
             folderBrowserDialog1.SelectedPath = Environment.CurrentDirectory;
             if (folderBrowserDialog1.ShowDialog()==DialogResult.OK)
             {
-                textBox2.Text = folderBrowserDialog1.SelectedPath;
+                txtOutputFolder.Text = folderBrowserDialog1.SelectedPath;
             }
         }
 
@@ -69,5 +113,100 @@ namespace FfmpegApp
         {
             this.Close();
         }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void SetOutputType(string outputType, Button btnSelectedType)
+        {
+            this.OutputType = outputType;
+
+            btnSelectedType.BackColor = Color.Crimson;
+
+            // Revert the background color of the previously-colored button, if any
+            if (lastClickedButton != null)
+                lastClickedButton.BackColor = Color.DimGray;
+
+            // Update the previously-colored button
+            lastClickedButton = btnSelectedType;
+        }
+
+        private void btnToAvi_Click(object sender, EventArgs e)
+        {
+            SetOutputType("avi", (Button)sender);            
+        }
+
+        private void btnToMp4_Click(object sender, EventArgs e)
+        {
+            SetOutputType("mp4", (Button)sender);
+        }
+
+        private void btnToMPEG_Click(object sender, EventArgs e)
+        {
+            SetOutputType("mpeg", (Button)sender);
+        }
+
+        private void btnToWmv_Click(object sender, EventArgs e)
+        {
+            SetOutputType("wmv", (Button)sender);
+        }
+
+        private void btnToFlv_Click(object sender, EventArgs e)
+        {
+            SetOutputType("flv", (Button)sender);
+        }
+
+        private void btnToMp3_Click(object sender, EventArgs e)
+        {
+            SetOutputType("mp3", (Button)sender);
+        }  
+
+        private void ConvertProgressEvent(object sender, MediaToolkit.ConvertProgressEventArgs e)
+        {
+            pbFileConversion.Invoke(new Action(() => 
+                                        {
+                                            pbFileConversion.Value = (int)(e.ProcessedDuration.TotalMilliseconds / e.TotalDuration.TotalMilliseconds * 100);                                            
+                                        }));
+            
+        }
+
+        private void ConversionCompleteEvent(object sender, ConversionCompleteEventArgs e)
+        {
+            pbFileConversion.Invoke(new Action(() =>
+            {
+                pbFileConversion.Value = 0;
+            }));
+        }
+
+        private string ConvertFile(ConvertFileDetails convertFileDetails) 
+        {
+            try
+            {
+                using (var engine = new Engine())
+                {
+                    var inputFile = new MediaFile { Filename = convertFileDetails.InputFilePath };
+                    var outputFile = new MediaFile { Filename = convertFileDetails.OutputFilePath };
+
+
+                    engine.ConvertProgressEvent += ConvertProgressEvent;
+                    engine.ConversionCompleteEvent += ConversionCompleteEvent;
+
+                    engine.Convert(inputFile, outputFile);
+
+                    Process.Start("explorer.exe", "/select, \"" + convertFileDetails.OutputFilePath + "\"");
+                    return "Success";
+
+                }
+            }
+            catch
+            {
+                return "Error";
+            }
+
+        }
+
+        
     }
 }
