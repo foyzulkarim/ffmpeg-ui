@@ -114,14 +114,14 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(259, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 18);
+            this.label3.Size = new System.Drawing.Size(140, 18);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Split end second";
+            this.label3.Text = "How many seconds";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // endTextBox
             // 
-            this.endTextBox.Location = new System.Drawing.Point(389, 63);
+            this.endTextBox.Location = new System.Drawing.Point(405, 62);
             this.endTextBox.Name = "endTextBox";
             this.endTextBox.Size = new System.Drawing.Size(100, 20);
             this.endTextBox.TabIndex = 10;
