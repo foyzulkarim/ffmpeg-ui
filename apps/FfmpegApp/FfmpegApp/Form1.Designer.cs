@@ -64,10 +64,9 @@
             // 
             // convertButton
             // 
-            this.convertButton.Location = new System.Drawing.Point(1023, 185);
-            this.convertButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.convertButton.Location = new System.Drawing.Point(682, 120);
             this.convertButton.Name = "convertButton";
-            this.convertButton.Size = new System.Drawing.Size(112, 34);
+            this.convertButton.Size = new System.Drawing.Size(75, 22);
             this.convertButton.TabIndex = 0;
             this.convertButton.Text = "Convert";
             this.convertButton.UseVisualStyleBackColor = true;
@@ -79,10 +78,9 @@
             // 
             // openFileButton
             // 
-            this.openFileButton.Location = new System.Drawing.Point(1023, 37);
-            this.openFileButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.openFileButton.Location = new System.Drawing.Point(682, 24);
             this.openFileButton.Name = "openFileButton";
-            this.openFileButton.Size = new System.Drawing.Size(112, 34);
+            this.openFileButton.Size = new System.Drawing.Size(75, 22);
             this.openFileButton.TabIndex = 1;
             this.openFileButton.Text = "Browse...";
             this.openFileButton.UseVisualStyleBackColor = true;
@@ -91,11 +89,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(122, 36);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(81, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 25);
+            this.label1.Size = new System.Drawing.Size(118, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Input File Name :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -103,29 +100,26 @@
             // txtInputFile
             // 
             this.txtInputFile.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtInputFile.Location = new System.Drawing.Point(316, 38);
-            this.txtInputFile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtInputFile.Location = new System.Drawing.Point(211, 25);
             this.txtInputFile.Name = "txtInputFile";
             this.txtInputFile.ReadOnly = true;
-            this.txtInputFile.Size = new System.Drawing.Size(689, 26);
+            this.txtInputFile.Size = new System.Drawing.Size(461, 20);
             this.txtInputFile.TabIndex = 3;
             // 
             // txtOutputFolder
             // 
             this.txtOutputFolder.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtOutputFolder.Location = new System.Drawing.Point(316, 127);
-            this.txtOutputFolder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtOutputFolder.Location = new System.Drawing.Point(211, 83);
             this.txtOutputFolder.Name = "txtOutputFolder";
             this.txtOutputFolder.ReadOnly = true;
-            this.txtOutputFolder.Size = new System.Drawing.Size(689, 26);
+            this.txtOutputFolder.Size = new System.Drawing.Size(461, 20);
             this.txtOutputFolder.TabIndex = 4;
             // 
             // folderOpenButton
             // 
-            this.folderOpenButton.Location = new System.Drawing.Point(1023, 126);
-            this.folderOpenButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.folderOpenButton.Location = new System.Drawing.Point(682, 82);
             this.folderOpenButton.Name = "folderOpenButton";
-            this.folderOpenButton.Size = new System.Drawing.Size(112, 34);
+            this.folderOpenButton.Size = new System.Drawing.Size(75, 22);
             this.folderOpenButton.TabIndex = 5;
             this.folderOpenButton.Text = "Browse...";
             this.folderOpenButton.UseVisualStyleBackColor = true;
@@ -136,8 +130,9 @@
             this.panel1.BackColor = System.Drawing.Color.Crimson;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 10);
+            this.panel1.Size = new System.Drawing.Size(800, 6);
             this.panel1.TabIndex = 9;
             // 
             // panel2
@@ -147,9 +142,10 @@
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 10);
+            this.panel2.Location = new System.Drawing.Point(0, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1200, 52);
+            this.panel2.Size = new System.Drawing.Size(800, 35);
             this.panel2.TabIndex = 10;
             // 
             // btnMinimize
@@ -159,10 +155,9 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(1083, -3);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnMinimize.Location = new System.Drawing.Point(722, -2);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(55, 53);
+            this.btnMinimize.Size = new System.Drawing.Size(37, 34);
             this.btnMinimize.TabIndex = 13;
             this.btnMinimize.Text = "-";
             this.btnMinimize.UseVisualStyleBackColor = false;
@@ -175,10 +170,9 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1140, -3);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Location = new System.Drawing.Point(760, -2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(55, 53);
+            this.btnClose.Size = new System.Drawing.Size(37, 34);
             this.btnClose.TabIndex = 12;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -187,11 +181,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 1);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(7, 1);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(278, 39);
+            this.label4.Size = new System.Drawing.Size(169, 26);
             this.label4.TabIndex = 12;
             this.label4.Text = "Video Converter";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -206,9 +199,10 @@
             this.panel3.Controls.Add(this.btnToMp4);
             this.panel3.Controls.Add(this.btnToAvi);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 62);
+            this.panel3.Location = new System.Drawing.Point(0, 41);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1200, 95);
+            this.panel3.Size = new System.Drawing.Size(800, 62);
             this.panel3.TabIndex = 11;
             // 
             // btnToMp3
@@ -217,12 +211,11 @@
             this.btnToMp3.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnToMp3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnToMp3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnToMp3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToMp3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToMp3.ForeColor = System.Drawing.Color.White;
-            this.btnToMp3.Location = new System.Drawing.Point(525, 0);
-            this.btnToMp3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnToMp3.Location = new System.Drawing.Point(350, 0);
             this.btnToMp3.Name = "btnToMp3";
-            this.btnToMp3.Size = new System.Drawing.Size(105, 95);
+            this.btnToMp3.Size = new System.Drawing.Size(70, 62);
             this.btnToMp3.TabIndex = 17;
             this.btnToMp3.Text = "To MP3";
             this.btnToMp3.UseVisualStyleBackColor = true;
@@ -234,12 +227,11 @@
             this.btnToFlv.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnToFlv.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnToFlv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnToFlv.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToFlv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToFlv.ForeColor = System.Drawing.Color.White;
-            this.btnToFlv.Location = new System.Drawing.Point(420, 0);
-            this.btnToFlv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnToFlv.Location = new System.Drawing.Point(280, 0);
             this.btnToFlv.Name = "btnToFlv";
-            this.btnToFlv.Size = new System.Drawing.Size(105, 95);
+            this.btnToFlv.Size = new System.Drawing.Size(70, 62);
             this.btnToFlv.TabIndex = 16;
             this.btnToFlv.Text = "To FLV";
             this.btnToFlv.UseVisualStyleBackColor = true;
@@ -251,12 +243,11 @@
             this.btnToWmv.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnToWmv.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnToWmv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnToWmv.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToWmv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToWmv.ForeColor = System.Drawing.Color.White;
-            this.btnToWmv.Location = new System.Drawing.Point(315, 0);
-            this.btnToWmv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnToWmv.Location = new System.Drawing.Point(210, 0);
             this.btnToWmv.Name = "btnToWmv";
-            this.btnToWmv.Size = new System.Drawing.Size(105, 95);
+            this.btnToWmv.Size = new System.Drawing.Size(70, 62);
             this.btnToWmv.TabIndex = 15;
             this.btnToWmv.Text = "To WMV";
             this.btnToWmv.UseVisualStyleBackColor = true;
@@ -268,12 +259,11 @@
             this.btnToMPEG.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnToMPEG.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnToMPEG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnToMPEG.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToMPEG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToMPEG.ForeColor = System.Drawing.Color.White;
-            this.btnToMPEG.Location = new System.Drawing.Point(210, 0);
-            this.btnToMPEG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnToMPEG.Location = new System.Drawing.Point(140, 0);
             this.btnToMPEG.Name = "btnToMPEG";
-            this.btnToMPEG.Size = new System.Drawing.Size(105, 95);
+            this.btnToMPEG.Size = new System.Drawing.Size(70, 62);
             this.btnToMPEG.TabIndex = 14;
             this.btnToMPEG.Text = "To MPEG";
             this.btnToMPEG.UseVisualStyleBackColor = true;
@@ -285,12 +275,11 @@
             this.btnToMp4.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnToMp4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnToMp4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnToMp4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToMp4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToMp4.ForeColor = System.Drawing.Color.White;
-            this.btnToMp4.Location = new System.Drawing.Point(105, 0);
-            this.btnToMp4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnToMp4.Location = new System.Drawing.Point(70, 0);
             this.btnToMp4.Name = "btnToMp4";
-            this.btnToMp4.Size = new System.Drawing.Size(105, 95);
+            this.btnToMp4.Size = new System.Drawing.Size(70, 62);
             this.btnToMp4.TabIndex = 13;
             this.btnToMp4.Text = "To Mp4";
             this.btnToMp4.UseVisualStyleBackColor = true;
@@ -302,12 +291,11 @@
             this.btnToAvi.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnToAvi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnToAvi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnToAvi.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToAvi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToAvi.ForeColor = System.Drawing.Color.White;
             this.btnToAvi.Location = new System.Drawing.Point(0, 0);
-            this.btnToAvi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnToAvi.Name = "btnToAvi";
-            this.btnToAvi.Size = new System.Drawing.Size(105, 95);
+            this.btnToAvi.Size = new System.Drawing.Size(70, 62);
             this.btnToAvi.TabIndex = 12;
             this.btnToAvi.Text = "To Avi";
             this.btnToAvi.UseVisualStyleBackColor = true;
@@ -326,26 +314,27 @@
             this.panel4.Controls.Add(this.convertButton);
             this.panel4.Controls.Add(this.folderOpenButton);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 157);
+            this.panel4.Location = new System.Drawing.Point(0, 103);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1200, 248);
+            this.panel4.Size = new System.Drawing.Size(800, 163);
             this.panel4.TabIndex = 12;
             // 
             // pbFileConversion
             // 
-            this.pbFileConversion.Location = new System.Drawing.Point(316, 185);
+            this.pbFileConversion.Location = new System.Drawing.Point(211, 120);
+            this.pbFileConversion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbFileConversion.Name = "pbFileConversion";
-            this.pbFileConversion.Size = new System.Drawing.Size(689, 34);
+            this.pbFileConversion.Size = new System.Drawing.Size(459, 22);
             this.pbFileConversion.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(202, 187);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(135, 122);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 25);
+            this.label6.Size = new System.Drawing.Size(77, 18);
             this.label6.TabIndex = 4;
             this.label6.Text = "Progress :";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -353,11 +342,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(69, 125);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(46, 81);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(246, 25);
+            this.label5.Size = new System.Drawing.Size(150, 18);
             this.label5.TabIndex = 3;
             this.label5.Text = "Output Folder Name :";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -368,33 +356,34 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.lblTimePassed);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 406);
+            this.panel5.Location = new System.Drawing.Point(0, 262);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1200, 11);
+            this.panel5.Size = new System.Drawing.Size(800, 9);
             this.panel5.TabIndex = 13;
             // 
             // lblTimePassed
             // 
             this.lblTimePassed.AutoSize = true;
             this.lblTimePassed.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblTimePassed.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimePassed.Location = new System.Drawing.Point(1196, 0);
+            this.lblTimePassed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimePassed.Location = new System.Drawing.Point(796, 0);
+            this.lblTimePassed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTimePassed.Name = "lblTimePassed";
-            this.lblTimePassed.Size = new System.Drawing.Size(0, 21);
+            this.lblTimePassed.Size = new System.Drawing.Size(0, 15);
             this.lblTimePassed.TabIndex = 0;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 417);
+            this.ClientSize = new System.Drawing.Size(800, 271);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

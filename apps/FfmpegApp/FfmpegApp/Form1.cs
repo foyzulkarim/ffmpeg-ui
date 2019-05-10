@@ -44,7 +44,7 @@ namespace FfmpegApp
                     OutputFilePath = outputFilePath
                 };
 
-                Task<string> conversionTask = new Task<string>(() => ConvertFile(conversionFileDetails));
+                Task<string> conversionTask = new Task<string>(() => FfmpegHandler.ConvertFile(conversionFileDetails, ConvertProgressEvent,ConversionCompleteEvent));
                 conversionTask.Start();
                 DisableActionButtons();
 
@@ -60,6 +60,24 @@ namespace FfmpegApp
             
         }
 
+        private void ConvertProgressEvent(object sender, MediaToolkit.ConvertProgressEventArgs e)
+        {
+            pbFileConversion.Invoke(new Action(() =>
+            {
+                pbFileConversion.Value = (int)(e.ProcessedDuration.TotalMilliseconds / e.TotalDuration.TotalMilliseconds * 100);
+            }));
+
+        }
+
+        private void ConversionCompleteEvent(object sender, ConversionCompleteEventArgs e)
+        {
+            pbFileConversion.Invoke(new Action(() =>
+            {
+                pbFileConversion.Value = 0;
+            }));
+        }
+
+
         private void DisableActionButtons()
         {
             convertButton.Enabled = folderOpenButton.Enabled = openFileButton.Enabled = false;
@@ -72,24 +90,7 @@ namespace FfmpegApp
 
         private void LaunchCommandLineApp(string input, string outputFile)
         {
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.CreateNoWindow = false;
-            startInfo.UseShellExecute = false;
-            startInfo.FileName = "ffmpeg.exe";
-            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            startInfo.Arguments = $"-i \"{input}\" \"{outputFile}\"";
-
-            try
-            {
-                using (Process exeProcess = Process.Start(startInfo))
-                {
-                    exeProcess.WaitForExit();
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            FfmpegHandler.ExecuteFFMpeg($"-i \"{input}\" \"{outputFile}\"");
         }
 
         private void openFileButton_Click(object sender, EventArgs e)
@@ -163,49 +164,7 @@ namespace FfmpegApp
             SetOutputType("mp3", (Button)sender);
         }  
 
-        private void ConvertProgressEvent(object sender, MediaToolkit.ConvertProgressEventArgs e)
-        {
-            pbFileConversion.Invoke(new Action(() => 
-                                        {
-                                            pbFileConversion.Value = (int)(e.ProcessedDuration.TotalMilliseconds / e.TotalDuration.TotalMilliseconds * 100);                                            
-                                        }));
-            
-        }
-
-        private void ConversionCompleteEvent(object sender, ConversionCompleteEventArgs e)
-        {
-            pbFileConversion.Invoke(new Action(() =>
-            {
-                pbFileConversion.Value = 0;
-            }));
-        }
-
-        private string ConvertFile(ConvertFileDetails convertFileDetails) 
-        {
-            try
-            {
-                using (var engine = new Engine())
-                {
-                    var inputFile = new MediaFile { Filename = convertFileDetails.InputFilePath };
-                    var outputFile = new MediaFile { Filename = convertFileDetails.OutputFilePath };
-
-
-                    engine.ConvertProgressEvent += ConvertProgressEvent;
-                    engine.ConversionCompleteEvent += ConversionCompleteEvent;
-
-                    engine.Convert(inputFile, outputFile);
-
-                    Process.Start("explorer.exe", "/select, \"" + convertFileDetails.OutputFilePath + "\"");
-                    return "Success";
-
-                }
-            }
-            catch
-            {
-                return "Error";
-            }
-
-        }
+       
 
         
     }
